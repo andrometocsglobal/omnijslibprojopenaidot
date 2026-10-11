@@ -1,0 +1,33 @@
+{
+  "name": "@omni/ui",
+  "version": "0.1.0",
+  "description": "Accessible React components and a responsive, token-based CSS toolkit",
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./styles.css": "./src/styles.css",
+    "./dom": {
+      "types": "./src/dom.d.ts",
+      "import": "./src/dom.js"
+    }
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}

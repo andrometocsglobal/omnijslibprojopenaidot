@@ -1,0 +1,25 @@
+{
+  "name": "omni-js-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @omni/lab",
+    "build": "npm run build -w @omni/lab",
+    "preview": "npm run preview -w @omni/lab",
+    "test": "node --test packages/core/test/*.test.js packages/ui/test/*.test.js",
+    "test:browser": "playwright test",
+    "check": "npm test && npm run build && npm run test:browser",
+    "benchmark": "node benchmarks/run.mjs && node benchmarks/write-report.mjs"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.58.2"
+  }
+}
